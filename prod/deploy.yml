@@ -6,7 +6,7 @@ metadata:
     app: lwweb
   name: lwweb
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: lwweb
