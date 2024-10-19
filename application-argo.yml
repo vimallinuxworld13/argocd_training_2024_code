@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1 
+kind: Application
+metadata:
+  name: lwwebapp1
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  source:
+    repoURL:  https://github.com/vimallinuxworld13/argocd_training_2024_code.git
+    path: prod
+    targetRevision: master
