@@ -1,4 +1,4 @@
-replicaCount: "5"
+replicaCount: "7"
 image.repository: "vimal13/apache-webserver-php"
 image.tag: "latest"
 
