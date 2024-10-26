@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "lwchart.fullname" . }}-test-connection"
+  labels:
+    {{- include "lwchart.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "lwchart.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
