@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1 
+kind: Application
+metadata:
+  name: lwwebapphelm1
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  source:
+    helm: 
+      releaseName: lwapphelm
+      parameters:
+        - name: "replicaCount"
+          value: "5"
+        - name: "image.repository"
+          value: "vimal13/apache-webserver-php"
+        - name: "image.tag"
+          value: "latest"
+    repoURL:  https://github.com/vimallinuxworld13/argocd_training_2024_code.git
+    path: myHelmCharts/lwchart
+    targetRevision: master

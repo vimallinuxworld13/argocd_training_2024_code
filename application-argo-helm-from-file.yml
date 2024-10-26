@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1 
+kind: Application
+metadata:
+  name: lwwebapphelm1
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  source:
+    helm: 
+      releaseName: lwapphelm
+      valueFiles:
+        - custom_values_for_argo_helm.yml 
+    repoURL:  https://github.com/vimallinuxworld13/argocd_training_2024_code.git
+    path: myHelmCharts/lwchart
+    targetRevision: master
