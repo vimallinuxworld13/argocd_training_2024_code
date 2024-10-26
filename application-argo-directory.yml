@@ -9,7 +9,8 @@ spec:
     namespace: default
   source:
     directory:
-      include: 'deploy.yml'
+      recurse: true
+      #include: 'deploy.yml'
       #      exclude: '{deploy.yml,service.yml}'
     repoURL:  https://github.com/vimallinuxworld13/argocd_training_2024_code.git
     path: prod
