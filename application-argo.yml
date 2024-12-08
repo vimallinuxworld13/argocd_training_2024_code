@@ -5,7 +5,7 @@ metadata:
 spec:
   project: default
   destination:
-    server: https://kubernetes.default.svc
+    server: https://192.168.59.117:8443
     namespace: default
   source:
     repoURL:  https://github.com/vimallinuxworld13/argocd_training_2024_code.git
