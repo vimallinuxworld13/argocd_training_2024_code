@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: lwweb
+  name: lwweb
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: lwweb
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: lwweb
+    spec:
+      containers:
+        - image: vimal13/apache-webserver-php:v1
+          name: apache-webserver-php
+status: {}

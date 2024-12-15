@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1 
 kind: Application
 metadata:
-  name: lwwebappprod
+  name: lwwebappstaging
 spec:
   project: default
   destination:
-    server: https://192.168.59.123:8443
+    server: https://192.168.59.122:8443
     namespace: default
   source:
     repoURL:  https://github.com/vimallinuxworld13/argocd_training_2024_code.git
-    path: multienv/prod
+    path: multienv/staging
     targetRevision: master
