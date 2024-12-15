@@ -5,7 +5,10 @@ metadata:
    namespace: argocd
 spec:
   generators:
-  - clusters: {}
+  - clusters:
+       selector:
+         matchLabels:
+           environment: production
   template:
     metadata:
       name: '{{name}}-application'
