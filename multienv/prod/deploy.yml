@@ -19,6 +19,5 @@ spec:
     spec:
       containers:
         - image: vimal13/apache-webserver-php:v1
-        name: apache-webserver-php
-        resources: {}
+          name: apache-webserver-php
 status: {}
