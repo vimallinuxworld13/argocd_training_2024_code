@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: list-app-set
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: prodcluster
+        url: https://kubernetes.default.svc
+      - cluster: staging
+        url: https://kubernetes.default.svc
+  template:
+    metadata:
+      name: '{{cluster}}-application'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/vimallinuxworld13/argocd_training_2024_code.git
+        targetRevision: main
+        path: 'multienv/{{cluster}}'
+      destination:
+        server: '{{url}}'
+        namespace: default
